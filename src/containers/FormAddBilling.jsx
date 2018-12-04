@@ -13,7 +13,7 @@ export const FormAddBilling = (props) => {
             </div>
            <div className="form-group">
                 <label>Tanggal Tagihan</label>
-                <input type="date" className="form-control" name="tanggalTagihan" defaultValue={!props.tanggalTagihan }/>
+                <input type="date" className="form-control" name="tanggalTagihan" defaultValue={props.tanggalTagihan }/>
             </div>
             <button className="btn btn-success" value="submit">Add Billing</button>
         </form>

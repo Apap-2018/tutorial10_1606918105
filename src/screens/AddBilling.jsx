@@ -79,14 +79,31 @@ export class AddBilling extends React.Component {
 	}
 
 	render() {
+        
+        var today = new Date(Date.now());
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        } 
+        if (mm < 10) {
+             mm = '0' + mm;
+        } 
+        var tanggalTagihan = yyyy + '-' + mm + '-' + dd;
+        
+        console.log(tanggalTagihan);
+        
 		if (this.state.loading) {
 			return (
 				<Loading msg="Fetching Data..." />
 			)
 		} else {
 			return (
-				<FormAddBilling pasien={this.state.pasien} onSubmit={this.handleFormSubmit} />
+				<FormAddBilling pasien={this.state.pasien} tanggalTagihan= {tanggalTagihan} onSubmit={this.handleFormSubmit} />
 			)
 		}
-	}
+    }
+    
 }
